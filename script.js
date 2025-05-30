@@ -6,6 +6,7 @@ let carrinho = [];
 
 async function carregarEventos() {
   try {
+    eventosContainer.innerHTML = '<div class="spinner"></div>';
     const response = await fetch("https://apostasesportivasapi.onrender.com/api/Events");
     if (!response.ok) throw new Error("Erro ao carregar eventos");
 
