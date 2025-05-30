@@ -6,7 +6,7 @@ let carrinho = [];
 
 async function carregarEventos() {
   try {
-    const response = await fetch("http://localhost:5209/api/Events");
+    const response = await fetch("https://apostasesportivasapi.onrender.com/api/Events");
     if (!response.ok) throw new Error("Erro ao carregar eventos");
 
     const eventos = await response.json();
@@ -151,7 +151,7 @@ async function enviarApostas() {
 
     console.log("Enviando payload formatado:", JSON.stringify(payload, null, 2));
 
-    const resposta = await fetch('http://localhost:5209/api/Events/bet', {
+    const resposta = await fetch('https://apostasesportivasapi.onrender.com/api/Events/bet', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
